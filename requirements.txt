@@ -1,0 +1,13 @@
+streamlit==1.39.0
+tensorflow==2.15.0
+numpy
+pandas
+opencv-python
+matplotlib
+scikit-learn
+Pillow
+tqdm
+seaborn
+scipy
+retina-face
+imutils
