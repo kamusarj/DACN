@@ -85,7 +85,7 @@ if uploaded_file is not None:
             faces.append((startX, startY, endX - startX, endY - startY))
     
     if len(faces) == 0:
-        st.error("Không phát hiện được khuôn mặt nào 😢")
+        st.error("Không phát hiện được khuôn mặt nào trong ảnh. Vui lòng thử ảnh khác.")
     else:
         # Lấy khuôn mặt có độ tin cậy cao nhất (khuôn mặt đầu tiên)
         x, y, w, h = faces[0]
@@ -105,7 +105,7 @@ if uploaded_file is not None:
         # Giả định age_gender_model_1.h5 dự đoán tuổi là giá trị [0, 1] cần scale
         clamped_age = np.clip(pred_age[0][0], 0, 1)
         age_pred = int(clamped_age * 116) if clamped_age > 0 else 1
-        gender_pred_label = "👦 Nam" if pred_gender[0][0] < 0.5 else "👧 Nữ"
+        gender_pred_label = "Nam" if pred_gender[0][0] < 0.5 else "Nữ"
 
         # Hiển thị kết quả
         st.image(face_img, caption=f"Khuôn mặt được cắt: {age_pred} tuổi, {gender_pred_label}")
