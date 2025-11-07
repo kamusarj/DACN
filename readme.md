@@ -62,7 +62,7 @@ streamlit run app.py
 ## 📝 Lưu ý
 
 - Ứng dụng sử dụng mô hình **`age_gender_model.h5`** để dự đoán tuổi và giới tính.  
-- Nếu muốn **huấn luyện lại mô hình**, làm theo các bước sau:
+- Nếu muốn **huấn luyện lại mô hình**, upload notebook **`notebook.ipynb`** lên Google Colab và sử dụng **Dataset** [UTKFace](https://www.kaggle.com/datasets/jangedoo/utkface-new) từ Kaggle hoặc làm theo các bước sau:
 
 1. **Tải dataset** [UTKFace](https://www.kaggle.com/datasets/jangedoo/utkface-new) từ Kaggle.  
 2. **Tạo môi trường ảo bằng Conda:**
@@ -81,6 +81,8 @@ streamlit run app.py
 │
 ├── app.py
 ├── age_gender_model.h5
+├── notebook.ipynb
+├── best_model.h5
 ├── opencv_face_detector.pbtxt
 ├── opencv_face_detector_uint8.pb
 └── temp_img.jpg (sẽ tạo khi upload)
