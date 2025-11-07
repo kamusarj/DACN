@@ -71,7 +71,7 @@ streamlit run app.py
    conda activate age_gender
 3. **Cài đặt thư viện cần thiết:**
    ```bash
-   pip install tensorflow opencv-python pillow numpy matplotlib jupyter
+   pip install tensorflow opencv-python pillow numpy matplotlib 
 4. Mở và chạy notebook **`notebook.ipynb`** để huấn luyện lại mô hình, sử dụng môi trường conda vừa tạo.  
 5. Sau khi huấn luyện xong, mô hình mới sẽ được lưu thành file **`age_gender_model.h5`**.
 
@@ -79,12 +79,12 @@ streamlit run app.py
 ```
 📁 project/
 │
-├── app.py
-├── age_gender_model.h5
-├── notebook.ipynb
-├── best_model.h5
-├── opencv_face_detector.pbtxt
-├── opencv_face_detector_uint8.pb
-└── temp_img.jpg (sẽ tạo khi upload)
+├── app.py (Streamlit app)
+├── age_gender_model.h5 (Mô hình nhận diện tuổi và giới tính)
+├── notebook.ipynb (Notebook huấn luyện mô hình)
+├── best_model.h5 (Mô hình có kết quả tốt nhất trong quá trình huấn luyện)
+├── opencv_face_detector.pbtxt (Cấu trúc mạng DNN của mô hình phát hiện khuôn mặt)
+├── opencv_face_detector_uint8.pb (Trọng số mô hình phát hiện khuôn mặt)
+└── temp_img.jpg (sẽ tạo khi upload ảnh)
 ```
 
