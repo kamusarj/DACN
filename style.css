@@ -1,0 +1,190 @@
+/* ===========================
+   TOÀN TRANG - DARK MODE
+=========================== */
+html, body, [class*="stAppViewContainer"], [data-testid="stAppViewContainer"], [data-testid="stHeader"], .stApp {
+    background-color: #1e1e1e; /* nền tối */
+    color: #f0f0f0;            /* chữ sáng */
+    font-family: "Segoe UI", "Roboto", sans-serif;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header, .css-1v3fvcr {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 10px 20px;
+    border-bottom: 2px solid #333333;
+}
+
+/* ===========================
+   TIÊU ĐỀ & SUBTITLE
+=========================== */
+h1, h2, h3, h4 {
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    animation: pulseText 2s infinite;
+}
+
+/* ===========================
+   UPLOADER & BUTTON
+=========================== */
+div.stFileUploader {
+    border: 2px dashed #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    transition: all 0.3s ease-in-out;
+}
+
+div.stFileUploader:hover {
+    background-color: #3a3a3a;
+    transform: scale(1.02);
+}
+
+button[kind="primary"] {
+    background-color: #007bff !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px !important;
+    padding: 8px 20px !important;
+    transition: all 0.3s ease-in-out;
+}
+
+button[kind="primary"]:hover {
+    background-color: #0056b3 !important;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   IMAGE & RESULT BOX
+=========================== */
+.stImage > div {
+    border: 3px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px auto;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stImage > div:hover {
+    transform: scale(1.03);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* ===========================
+   PREDICTION CARD
+=========================== */
+.prediction-card {
+    background-color: rgba(50,50,50,0.85);
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    margin: 15px auto;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.prediction-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+}
+
+/* Emoji và tuổi nằm ngang, căn giữa */
+.emoji-age {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* khoảng cách giữa emoji và tuổi */
+    margin-bottom: 8px;
+}
+
+.emoji {
+    font-size: 48px;
+}
+
+.age {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd166;
+}
+
+/* Giới tính nhỏ hơn, nằm ngay dưới */
+.gender {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+
+/* ===========================
+   TEAM FOOTER
+=========================== */
+footer {
+    text-align:center;
+    margin-top:30px;
+    color:#f0f0f0;
+    font-size:14px;
+}
+
+.team-container {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.team-card {
+    background: rgba(60,60,60,0.8);
+    border-radius:10px;
+    padding:15px;
+    width:180px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(255,255,255,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(255,255,255,0.2);
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+}
+
+.team-card h3 {
+    margin: 5px 0 3px;
+    color: #ffd166;
+    font-size: 18px;
+}
+
+.team-card p {
+    margin: 0;
+    color: #f0f0f0;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes pulseText {
+    0% { color: #ffffff; }
+    50% { color: #00ff08; }
+    100% { color: #ffffff; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
+    100% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}

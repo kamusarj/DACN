@@ -80,6 +80,7 @@ streamlit run app.py
 📁 project/
 │
 ├── app.py (Streamlit app)
+├── style.css (Style ứng dụng)
 ├── age_gender_model.h5 (Mô hình nhận diện tuổi và giới tính)
 ├── notebook.ipynb (Notebook huấn luyện mô hình)
 ├── best_model.h5 (Mô hình có kết quả tốt nhất trong quá trình huấn luyện)
