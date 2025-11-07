@@ -5,10 +5,9 @@ import tensorflow as tf
 from PIL import Image
 import os
 
-# === LOAD MODEL (Model Nhận diện tuổi & giới tính) ===
+# === LOAD MODEL ===
 @st.cache_resource
 def load_model():
-    # Đảm bảo model_path đã được fix lỗi UnicodeDecodeError (bằng cách di chuyển project)
     model_path = "./age_gender_model.h5"
     try:
         model = tf.keras.models.load_model(model_path)
@@ -85,8 +84,6 @@ if uploaded_file is not None:
             # Lưu tọa độ dưới dạng (x, y, w, h) tương thích với logic cũ
             faces.append((startX, startY, endX - startX, endY - startY))
     
-    # ==========================================================
-
     if len(faces) == 0:
         st.error("Không phát hiện được khuôn mặt nào 😢")
     else:
