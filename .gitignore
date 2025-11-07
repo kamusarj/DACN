@@ -28,6 +28,7 @@ __pycache__/
 *.pt
 *.pth
 *.onnx
+*.jpg
 
 # TensorBoard & training outputs
 logs/
@@ -53,4 +54,3 @@ UTKFace/
 
 # Imgae files
 Image_Test/
-temp_img.jpg
