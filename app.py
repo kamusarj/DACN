@@ -51,25 +51,27 @@ net = load_face_detector()
 # =======================
 # App Title
 # =======================
-st.title("Nhận diện tuổi & giới tính")
-st.write("Upload ảnh👇")
+st.title("📸 Nhận diện tuổi & giới tính")
+st.write("Chọn 1 trong 2 cách bên dưới:")
 
 # =======================
-# Upload ảnh
+# Chọn ảnh từ upload hoặc webcam
 # =======================
-uploaded_file = st.file_uploader("Chọn ảnh...", type=["jpg", "jpeg", "png"])
+option = st.radio("Nguồn ảnh:", ["Upload ảnh", "Chụp webcam"])
+
+uploaded_file = None
+if option == "Upload ảnh":
+    uploaded_file = st.file_uploader("Chọn ảnh...", type=["jpg", "jpeg", "png"])
+else:
+    camera_photo = st.camera_input("Chụp ảnh trực tiếp")
+    if camera_photo:
+        uploaded_file = camera_photo
 
 if uploaded_file is not None:
     # Lưu tạm
-    img_path = "temp_img.jpg"
-    with open(img_path, "wb") as f:
-        f.write(uploaded_file.read())
-
-    # Đọc ảnh
-    img_cv2 = cv2.imread(img_path)
-    if img_cv2 is None:
-        st.error("Không đọc được ảnh")
-        st.stop()
+    img = Image.open(uploaded_file).convert("RGB")
+    img_cv2 = np.array(img)
+    img_cv2 = cv2.cvtColor(img_cv2, cv2.COLOR_RGB2BGR)
 
     h, w = img_cv2.shape[:2]
     img_rgb = cv2.cvtColor(img_cv2, cv2.COLOR_BGR2RGB)
@@ -93,7 +95,7 @@ if uploaded_file is not None:
             faces.append((startX,startY,endX-startX,endY-startY))
 
     if len(faces) == 0:
-        st.error("Không phát hiện khuôn mặt")
+        st.error("Không phát hiện khuôn mặt.")
         st.stop()
 
     # Lấy khuôn mặt đầu tiên
@@ -105,14 +107,6 @@ if uploaded_file is not None:
     # =======================
     # Dự đoán tuổi & giới tính
     # =======================
-    pred_gender, pred_age = model.predict(input_img, verbose=0)
-    clamped_age = np.clip(pred_age[0][0], 0,1)
-    age_pred = int(clamped_age*116) if clamped_age>0 else 1
-    gender_pred_label = "Nam" if pred_gender[0][0]<0.5 else "Nữ"
-
-
-if uploaded_file is not None:
-    # --- Xử lý face, predict ---
     pred_gender, pred_age = model.predict(input_img, verbose=0)
     clamped_age = np.clip(pred_age[0][0],0,1)
     age_pred = int(clamped_age*116) if clamped_age>0 else 1
@@ -149,8 +143,9 @@ if uploaded_file is not None:
         current_age += 1
         time.sleep(0.05)
 
-
-
+# =======================
+# Footer
+# =======================
 st.markdown("""
 <footer>
     <h2>Về chúng tôi</h2>
