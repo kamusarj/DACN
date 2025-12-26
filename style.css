@@ -1,190 +1,126 @@
 /* ===========================
-   TOÀN TRANG - DARK MODE
+   TOÀN TRANG - LIGHT MODE & SIMPLE
 =========================== */
-html, body, [class*="stAppViewContainer"], [data-testid="stAppViewContainer"], [data-testid="stHeader"], .stApp {
-    background-color: #1e1e1e; /* nền tối */
-    color: #f0f0f0;            /* chữ sáng */
-    font-family: "Segoe UI", "Roboto", sans-serif;
+/* Thiết lập font chữ và màu nền cơ bản */
+html, body, [class*="stAppViewContainer"], .stApp {
+    background-color: #ffffff; /* Nền trắng */
+    color: #333333;            /* Chữ xám đen dễ đọc */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* ===========================
-   HEADER
+   TIÊU ĐỀ
 =========================== */
-header, .css-1v3fvcr {
-    background-color: #121212 !important;
-    color: #f0f0f0 !important;
-    font-weight: 700;
-    font-size: 22px;
-    padding: 10px 20px;
-    border-bottom: 2px solid #333333;
-}
-
-/* ===========================
-   TIÊU ĐỀ & SUBTITLE
-=========================== */
-h1, h2, h3, h4 {
-    color: #ffffff;
-    font-weight: 700;
+h1 {
+    color: #2c3e50;
     text-align: center;
-    animation: pulseText 2s infinite;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    color: #34495e;
 }
 
 /* ===========================
-   UPLOADER & BUTTON
+   UPLOADER (Vùng chọn ảnh)
 =========================== */
 div.stFileUploader {
-    border: 2px dashed #f0f0f0;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #2b2b2b;
-    color: #f0f0f0;
-    transition: all 0.3s ease-in-out;
+    background-color: #f8f9fa; /* Xám rất nhạt */
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
 }
 
-div.stFileUploader:hover {
-    background-color: #3a3a3a;
-    transform: scale(1.02);
-}
-
+/* ===========================
+   BUTTON (Nút bấm)
+=========================== */
 button[kind="primary"] {
-    background-color: #007bff !important;
+    background-color: #3498db !important; /* Xanh dương nhẹ nhàng */
     color: white !important;
-    font-weight: 600;
-    border-radius: 8px !important;
-    padding: 8px 20px !important;
-    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 5px !important;
+    transition: background-color 0.2s;
 }
 
 button[kind="primary"]:hover {
-    background-color: #0056b3 !important;
-    transform: scale(1.05);
+    background-color: #2980b9 !important;
 }
 
 /* ===========================
-   IMAGE & RESULT BOX
-=========================== */
-.stImage > div {
-    border: 3px solid #f0f0f0;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px auto;
-    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
-    transition: transform 0.3s ease;
-}
-
-.stImage > div:hover {
-    transform: scale(1.03);
-    animation: glow 1.5s infinite alternate;
-}
-
-/* ===========================
-   PREDICTION CARD
+   PREDICTION CARD (Kết quả)
 =========================== */
 .prediction-card {
-    background-color: rgba(50,50,50,0.85);
-    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Viền mỏng */
+    border-radius: 12px;
     padding: 20px;
-    width: 250px;
+    width: 280px;
     text-align: center;
-    margin: 15px auto;
-    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
-    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bóng đổ nhẹ */
 }
 
-.prediction-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.3);
-    background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
-}
-
-/* Emoji và tuổi nằm ngang, căn giữa */
 .emoji-age {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* khoảng cách giữa emoji và tuổi */
-    margin-bottom: 8px;
+    gap: 15px;
+    margin-bottom: 5px;
 }
 
 .emoji {
-    font-size: 48px;
+    font-size: 40px;
 }
 
 .age {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: #ffd166;
+    color: #2c3e50;
 }
 
-/* Giới tính nhỏ hơn, nằm ngay dưới */
 .gender {
     font-size: 18px;
-    color: #f0f0f0;
+    color: #7f8c8d; /* Màu xám ghi */
+    font-weight: 500;
 }
 
-
 /* ===========================
-   TEAM FOOTER
+   FOOTER (Team)
 =========================== */
 footer {
-    text-align:center;
-    margin-top:30px;
-    color:#f0f0f0;
-    font-size:14px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+footer h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .team-container {
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .team-card {
-    background: rgba(60,60,60,0.8);
-    border-radius:10px;
-    padding:15px;
-    width:180px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(255,255,255,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.team-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow:0 10px 25px rgba(255,255,255,0.2);
-    background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+    /* Đơn giản hóa thẻ thành viên */
+    text-align: center;
 }
 
 .team-card h3 {
-    margin: 5px 0 3px;
-    color: #ffd166;
-    font-size: 18px;
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .team-card p {
     margin: 0;
-    color: #f0f0f0;
+    color: #666;
     font-size: 14px;
-    line-height: 1.2;
-}
-
-/* ===========================
-   ANIMATIONS
-=========================== */
-@keyframes pulseText {
-    0% { color: #ffffff; }
-    50% { color: #00ff08; }
-    100% { color: #ffffff; }
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
-    100% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
 }
